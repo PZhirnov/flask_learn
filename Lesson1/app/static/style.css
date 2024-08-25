@@ -1,0 +1,24 @@
+* {
+    padding: 0;
+    margin: auto;
+  }
+  body {
+    background-color: #f2f2f2;
+    font-family: 'Courier New', Courier, monospace;
+  }
+  
+  div {
+    border: 1px solid #a19e9e;
+    padding: 5px 10px;
+  }
+
+  button {
+    padding: 5px 10px;
+    background-color: rgb(226, 243, 130);
+    border-radius: 10px;
+    border: none;
+  }
+
+  button:hover {
+    background-color: rgb(202, 218, 113);
+  }

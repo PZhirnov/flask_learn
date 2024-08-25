@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <meta charset="UTF-8">  
+    <title>Моё приложение</title>
+    <div style="display: flex; flex-direction: column; align-items: start;">
+        Пользователь: {{ username }} (id: {{ id }})
+        Дата и время: {{ datetime }}
+        <div>
+            <h1>Приложение на Flask</h1>
+        </div>
+        <div>
+            <p>
+                Это мое первое приложение на Flask
+            </p>
+        </div>
+        <div>
+          <button>Добавить обработчик</button>
+          <button onclick="((e) => alert('Данные переданы!'))()">Передать данные</button>   
+        </div>
+    </div>
+</head>
+<body>
+</body>
+</html>

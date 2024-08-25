@@ -19,8 +19,9 @@ def main():
         "username": "p.zhirnov",
         "datetime": datetime.utcnow(),
     }
-
-    with open(path.join('results', f'new_file{datetime.utcnow()}.txt'), 'w', encoding='utf-8') as file:
+    print(type(path.join(path.abspath('results'), f'new_file{datetime.utcnow()}.txt')))
+    print(path.abspath('results'))
+    with open(path.join(path.abspath('results'), f'new_file{datetime.now()}.txt'.replace(':', '-')), 'w', encoding='utf-8') as file:
         file.write(f'{datetime.utcnow()}')
     return render_template('main.html', **data)
 

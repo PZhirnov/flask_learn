@@ -32,7 +32,7 @@ def render_markdown():
     return "## Heading", 200, {'Content-Type': 'text/markdown'}
 
 
-@app.route('/transfer')
+@app.route('/transfer', methods=['get', 'post'])
 def transfer():
     """
     Реализация редиректа скодом 302

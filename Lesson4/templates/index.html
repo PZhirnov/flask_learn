@@ -42,6 +42,11 @@
             transition: width 0.2s ease-in-out 0s;
             border-radius: 50%;
         }
+
+
+        .visited {
+            background-color: rgb(227, 54, 54);
+        }
     </style>
 
 
@@ -50,11 +55,24 @@
 <body>
     <div class="main">
         {% for word in datа_char_list %}
-        <div class="item">
+        <div id="{{word}}" class="item">
             {{ word|title }}
         </div>
         {% endfor %}
     </div>
 </body>
+<script type="text/javascript">
+    let buttons = document.querySelectorAll('.item');
+    buttons.forEach((btn) => {
+        btn.addEventListener('click', (e) => {
+            // alert(e.target.id);
+            btn.classList.add('visited');
+        });
+        // btn.style.width = `${Math.round(Math.random() * 250)}px`;
+
+    }
+
+    )
+</script>
 
 </html>

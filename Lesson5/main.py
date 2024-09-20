@@ -6,11 +6,15 @@
 Функция url_for() принимает конечную точку и возвращает URL в виде строки.
 """
 
-from flask import Flask, make_response
+from flask import Flask, make_response, request, render_template
 from flask import url_for
 
 
 app = Flask(__name__)
+# app = Flask(__name__, static_folder="static_dir")
+
+# Пример запроса: http://127.0.0.1:5000/static/rp777.pdf
+app.static_folder = 'static'
 
 
 @app.route('/')
@@ -32,6 +36,20 @@ def main():
     response.headers['Server'] = 'Foobar'
     print(url_for('index'))
     return response
+
+
+@app.route('/login/', methods=['post', 'get'])
+def login():
+    message = ''
+    if request.method == 'POST':
+        username = request.form.get('username')  # запрос к данным формы
+        password = request.form.get('password')
+        if username == 'root' and password == 'pass':
+            message = "Correct username and password"
+    else:
+        message = "Wrong username or password"
+
+    return render_template('login.html', message=message)
 
 
 if __name__ == '__main__':
